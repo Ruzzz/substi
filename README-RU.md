@@ -17,7 +17,7 @@
 ## Примеры ##
 
 	substi file.txt hi hello
-	substi file.txt \"General Public License\" GPL
+	substi file.txt "General Public License" GPL
 	substi -rewrite file.txt \\n \\r\\n
 	substi -nobackup file.txt \\r\\n \\n
 	substi -remove file.txt \\0
