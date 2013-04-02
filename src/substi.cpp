@@ -39,10 +39,9 @@ const char USAGE[] =
     "Examples:\n"
     "  substi file.txt hi hello\n"
     "  substi file.txt \"General Public License\" GPL\n"
-    "  substi -rewrite file.txt \\n \\r\\n\n"
+    "  substi -rewrite file.txt \\t \"    \"\n"
     "  substi -nobackup file.txt \\r\\n \\n\n"
     "  substi -remove file.txt \\0\n"
-    
 };
 
 
@@ -80,12 +79,8 @@ int _tmain(const int argc, const tchar *argv[])
             MAIN_ABORT(options.getLastError().toString())
         else if (!FileUtil::existsFile(options.fileName()))
             MAIN_ABORT("File not exists")
-
         else
         {
-            // TODO If size of oldString == size of newString
-            //   and set -writeDirect then write direct.
-            //   Dev: If not use -nobackup then copy file, not move.
             tstring tempFileName;
             if (options.noBackup())
             {
@@ -129,7 +124,6 @@ int _tmain(const int argc, const tchar *argv[])
                     // If not found then restore file
                     if (s.numFound() == 0)
                         FileUtil::moveFile(tempFileName.c_str(), options.fileName(), true);
-                    // Found 5300 occurrences in 3 seconds
                     clock_t totalTime = clock() - startTime;
                     double seconds = static_cast<double>(totalTime) / CLOCKS_PER_SEC;
                     std::cout << "Found " << s.numFound() << " occurrences in " << seconds << " seconds.\n";

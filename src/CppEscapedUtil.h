@@ -16,8 +16,8 @@ class CppEscapedUtil
 public:
     template <typename TInIt, typename TOutIt>
     static bool decode(TInIt &first, const TInIt &last, TOutIt &out, unsigned int hexNumsLimit = 8)
-        /// Supports: \n \t \v \b \r \f \a \\ \? \' \" \xH...(see hexNumsLimit) \0
-        /// Not supports: octal number \000 - \377
+        /// Supported: \n \t \v \b \r \f \a \\ \? \' \" \xH...(see hexNumsLimit) \0
+        /// Not supported: octal number \000 - \377
     {
         bool escaped = false;
         while (first < last)

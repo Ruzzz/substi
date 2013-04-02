@@ -10,7 +10,6 @@
 
 #include "KnuthMorrisPrattEngine.h"
 #include "OneByteEngine.h"
-
 #include "SearchInFileEngineFactory.h"
 
 
@@ -29,6 +28,6 @@ SearchInFileEngineBase* SearchInFileEngineFactory::get(SearchInFileEngineBase::T
     {
         case SearchInFileEngineBase::Type::KNUTH_MORRIS_PRATT: return new KnuthMorrisPrattEngine;
         case SearchInFileEngineBase::Type::ONE_BYTE:           return new OneByteEngine;
-        default:                 return nullptr;
+        default:                                               return nullptr;
     }
 }
