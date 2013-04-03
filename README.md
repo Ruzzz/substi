@@ -1,6 +1,6 @@
 # Substitute
 
-Substitute string in file.
+Command line utility for substitute string in file.
 
 ## Usage ##
 
