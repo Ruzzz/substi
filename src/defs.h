@@ -8,7 +8,7 @@
 #pragma once
 
 
-#define VERSION "0.1.1a"
+#define VERSION "0.1.2a"
 
 #define MAIN_ABORT(msg) { std::cerr << "Error: " << msg << "." << std::endl; return EXIT_FAILURE; }
 #define PRINT_ERROR(msg) std::cerr << "Error: " << msg << "." << std::endl;
