@@ -7,8 +7,8 @@
 
 #include <gtest/gtest.h>
 
-//#include "HexUtilTest.h"
-//#include "CppEscapedUtilTest.h"
+#include "HexUtilTest.h"
+#include "CppEscapedUtilTest.h"
 //#include "StringUtilTest.h"
 #include "KnuthMorrisPrattEngineTest.h"
 #include "SubstituteTest.h"

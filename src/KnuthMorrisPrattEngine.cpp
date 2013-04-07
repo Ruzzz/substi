@@ -19,7 +19,7 @@ void KnuthMorrisPrattEngine::search()
         Bytes::size_type patternLen = pattern.size();
         Bytes::size_type j = 0;
         std::streambuf *pBuf = data_.sourceFile->rdbuf();
-        
+
         while (true)
         {
             int ch = pBuf->sbumpc();

@@ -26,6 +26,7 @@ private:
     KnuthMorrisPrattEngine(KnuthMorrisPrattEngine&);
     void operator=(KnuthMorrisPrattEngine&);
     void writeLast(const Bytes::size_type skipLastBytes = 0);
+
     Prefixes prefixes_;
 
 #ifndef TESTING

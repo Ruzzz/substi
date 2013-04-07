@@ -8,9 +8,9 @@
 #pragma once
 
 
-#include <cstring>
+#include <cstring>  // memset
 
-#include "defs.h"
+#include "defs.h"  // ARRAY_SIZE
 
 
 class HexUtil
@@ -57,17 +57,18 @@ public:
 
     template <typename TInIt>
     static unsigned int toUInt(TInIt &first, const TInIt &last,
-        Byte &result, const unsigned int limit = 8)
+        unsigned int &result, const unsigned int limit = 8)
         /// Convert at least 1 (if second non hex) character to byte number,
         ///   but not more than <limit>.
         /// Note: <result> may be corrupt even when return 0.
         /// Set <first> after hex characters.
         /// Return number of extracted characters.
     {
+        const unsigned int limit_ = limit > 8 ? 8 : limit;
         Byte b;
         result = 0;
         unsigned int count = 0;
-        while (count < limit && first != last && charValue(*first, b))
+        while (count < limit_ && first != last && charValue(*first, b))
         {
             ++count;
             result = (result << 4) | b;
@@ -75,6 +76,30 @@ public:
         }
         return count;
     }
+
+
+    template <typename TInIt>
+    static unsigned int toUInt64(TInIt &first, const TInIt &last,
+        uint64_t &result, const unsigned int limit = 16)
+        /// Convert at least 1 (if second non hex) character to byte number,
+        ///   but not more than <limit>.
+        /// Note: <result> may be corrupt even when return 0.
+        /// Set <first> after hex characters.
+        /// Return number of extracted characters.
+    {
+        const unsigned int limit_ = limit > 16 ? 16 : limit;
+        Byte b;
+        result = 0;
+        unsigned int count = 0;
+        while (count < limit_ && first != last && charValue(*first, b))
+        {
+            ++count;
+            result = (result << 4) | b;
+            ++first;
+        }
+        return count;
+    }
+
 
 private:
     HexUtil();

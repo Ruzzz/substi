@@ -14,6 +14,10 @@
 #define PRINT_ERROR(msg) std::cerr << "Error: " << msg << "." << std::endl;
 #define ARRAY_SIZE(arr) (sizeof(arr) / sizeof(arr[0]))
 
+#ifdef _WIN32
+typedef unsigned __int64 uint64_t;
+#endif
+
 #ifdef _UNICODE
     #define tstring std::wstring
 

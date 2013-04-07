@@ -15,7 +15,7 @@ class CppEscapedUtil
 {
 public:
     template <typename TInIt, typename TOutIt>
-    static bool decode(TInIt &first, const TInIt &last, TOutIt &out, unsigned int hexNumsLimit = 8)
+    static bool decode(TInIt &first, const TInIt &last, TOutIt &out, unsigned int hexNumsLimit = 2)
         /// Supported: \n \t \v \b \r \f \a \\ \? \' \" \xH...(see hexNumsLimit) \0
         /// Not supported: octal number \000 - \377
     {
@@ -27,11 +27,11 @@ public:
                 if ('x' == *first)  // Hex \xHH
                 {
                     ++first;
-                    HexUtil::Byte b;
-                    unsigned int count = HexUtil::toUInt(first, last, b, hexNumsLimit);
+                    unsigned int b;
+                    unsigned int count = HexUtil::toUInt(first, last, b, hexNumsLimit > 2 ? 2 : hexNumsLimit);
                     if (0 == count)
                         return false;
-                    *out++ = b;
+                    *out++ = static_cast<HexUtil::Byte>(b);
                     escaped = false;
                     continue;
                 }
@@ -57,7 +57,7 @@ public:
     }
 
     template <typename TCharContainer>
-    static bool decodeInPlace(TCharContainer &container, unsigned int hexNumsLimit = 8)
+    static bool decodeInPlace(TCharContainer &container, unsigned int hexNumsLimit = 2)
         /// See decode()
     {
         TCharContainer newContainer;
