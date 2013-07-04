@@ -24,4 +24,4 @@ Supported: \\n \\t \\v \\b \\r \\f \\a \\\\ \\? \\' \\\" \\xH \\xHH \\0.
 
 ## Download ##
 
-[Releases](https://github.com/Ruzzz/Substitute)
+[Releases](https://github.com/Ruzzz/Substitute/releases)

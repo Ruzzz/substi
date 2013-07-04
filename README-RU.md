@@ -24,4 +24,4 @@
 
 ## Скачать ##
 
-[Исполняемые файлы](https://github.com/Ruzzz/Substitute)
+[Исполняемые файлы](https://github.com/Ruzzz/Substitute/releases)
