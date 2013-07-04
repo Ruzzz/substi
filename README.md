@@ -24,4 +24,4 @@ Supported: \\n \\t \\v \\b \\r \\f \\a \\\\ \\? \\' \\\" \\xH \\xHH \\0.
 
 ## Download ##
 
-[Win32 exe files](http://ge.tt/9xoIssc)
+[Releases](https://github.com/Ruzzz/Substitute)

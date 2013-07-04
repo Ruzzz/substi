@@ -24,4 +24,4 @@
 
 ## Скачать ##
 
-[Исполняемые файлы для Windows 32bit](http://ge.tt/9xoIssc)
+[Исполняемые файлы](https://github.com/Ruzzz/Substitute)
