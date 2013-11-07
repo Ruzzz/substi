@@ -13,7 +13,7 @@ set CLEAN_EXE_PATCH=%CURRENT_PATH%clean_rich_signature
 :: Prepare files
 mkdir %ARC_PATH%
 copy /V %ROOT_PATH%\bin\substi.exe %ARC_PATH%\
-spatch -nobackup %ARC_PATH%\substi.exe %CLEAN_EXE_PATCH%
+sipatch -nobackup %ARC_PATH%\substi.exe %CLEAN_EXE_PATCH%
 
 :: Pack
 erase *.7z

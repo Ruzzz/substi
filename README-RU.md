@@ -1,4 +1,4 @@
-# Substitute
+# substi
 
 Замена строки в файле.
 

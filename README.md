@@ -1,6 +1,6 @@
-# Substitute
+# substi
 
-Command line utility for substitute string in file.
+Command line utility for substitution strings in a file.
 
 ## Usage ##
 
